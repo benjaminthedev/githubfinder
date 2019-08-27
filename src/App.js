@@ -1,13 +1,17 @@
-import React from 'react';
-
+import React, { Fragment, Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello React World</h1>
-    </div>
-  );
+class App extends Component{
+  render(){
+
+    const name = 'Peter Smith';
+
+      return (
+        <Fragment>
+          <h1>Hello React World {name.toUpperCase()}</h1>
+        </Fragment>
+      );
+  }
 }
 
 export default App;
