@@ -1,6 +1,8 @@
 import React, { Fragment, Component } from 'react';
 import Navbar from './components/layout/Navbar';
 import Users from './components/users/Users';
+import Users from './components/users/Search'
+
 import axios from 'axios';
 import './App.css';
 
@@ -28,6 +30,7 @@ class App extends Component{
           <Navbar title="GitHub Finder" icon="fab fa-github"/>
           
           <div className="container">
+            <Search />
             <Users loading={this.state.loading} users={this.state.users}/>          
           </div>
         </Fragment>
