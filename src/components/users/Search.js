@@ -6,6 +6,10 @@ export class Search extends Component {
         text: ''
     }
 
+    static propTypes = {
+        searchUsers: PropTypes.func.isRequired
+    };
+
     onChange = e => {
         this.setState({ [e.target.name ]: e.target.value  })   
     }
@@ -16,7 +20,7 @@ export class Search extends Component {
         this.setState({ text: '' })
     }
 
-    render() {
+    render() { 
         return (
             <div>
                 <form onSubmit={this.onSubmit }>
