@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export class Search extends Component {
@@ -7,7 +7,7 @@ export class Search extends Component {
         text: ''
     }
 
-    static propTypes = {
+    static propTypes = { 
         searchUsers: PropTypes.func.isRequired,
         clearUsers: PropTypes.func.isRequired,
         showClear: PropTypes.bool.isRequired
