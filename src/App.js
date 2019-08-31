@@ -38,6 +38,9 @@ class App extends Component{
 
   
   render(){
+
+    const { users, loading} = this.state;
+
       return (
         <Fragment>
           <Navbar title="GitHub Finder" icon="fab fa-github"/>
@@ -47,12 +50,12 @@ class App extends Component{
             <Search 
             searchUsers={this.searchUsers}  
             clearUsers={this.clearUsers} 
-            showClear={ this.state.users.length > 0 ? true : false} 
+            showClear={users.length > 0 ? true : false} 
             />
 
             <Users 
-            loading={this.state.loading} 
-            users={this.state.users}
+            loading={loading} 
+            users={users}
             />          
           </div>
         </Fragment>

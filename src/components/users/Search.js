@@ -7,7 +7,7 @@ export class Search extends Component {
         text: ''
     }
 
-    static propTypes = { 
+    static propTypes = {  
         searchUsers: PropTypes.func.isRequired,
         clearUsers: PropTypes.func.isRequired,
         showClear: PropTypes.bool.isRequired
@@ -24,15 +24,17 @@ export class Search extends Component {
     }
 
     render() { 
+
+        const { showClear, clearUsers } = this.props;
         return (
             <div>
                 <form onSubmit={this.onSubmit }>
                     <input type="text" name="text" placeholder="Search Git Users...." value={this.state.text} onChange={this.onChange}  ></input>
                     <input type="submit" value="search" className="btn"></input>
                 </form>
-                {this.props.showClear && <button 
+                {showClear && <button 
                     className="button btn-light btn-block" 
-                    onClick={this.props.clearUsers}>
+                    onClick={clearUsers}>
                     clear
                 </button>}                
             </div>
