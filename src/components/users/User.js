@@ -18,6 +18,7 @@ export class User extends Component {
 
         const {
             name,
+            company,
             avatar_url,
             location, 
             bio,
@@ -38,7 +39,58 @@ export class User extends Component {
         return (
             <Fragment>
                 <Link to='/' className='btn btn-light'>Back To Search</Link>
-            
+                Hireable: {' '}
+                {hireable ? (<i className="fas fa-check text-success" />) : (<i className="fas fa-times-circle text-danger" />) }
+                <div className='card grid-2'>
+                    <div classname="all-center">
+                        <img src={avatar_url} className="round-img" alt="" style={{ width: '250px'}} />
+                    </div>
+                    <h1>{name}</h1>
+                    <p>{location}</p> 
+                </div>
+
+                <div> 
+                    {bio && (
+                        <Fragment>
+                        <h3>Bio</h3>
+                        <p>{bio}</p>
+                        </Fragment>
+                    )}
+
+                     <a href={html_url} className="btn btn-dark my-1">Visit My GitHub Profile</a> 
+
+                     <ul>
+                        <li>
+                            {login && <Fragment>
+                                <strong>Username: </strong> {login}
+                            </Fragment>}
+                        </li>
+
+                        <li>
+                            {company && <Fragment>
+                                <strong>Company: </strong> {company}
+                            </Fragment>}
+                        </li>
+
+                        <li>
+                            {blog && <Fragment>
+                                <strong>Website: </strong> {blog}
+                            </Fragment>}
+                        </li>
+                        
+                       
+                     </ul>
+                </div> 
+
+                
+
+                <div className="card text-center">
+                      <div classNam="badge badge-light">Followers: {followers}</div>       
+                      <div classNam="badge badge-light">Following: {following}</div>
+                      <div classNam="badge badge-light">Public Repos: {public_repos}</div>
+                      <div classNam="badge badge-light">Public Gists: {public_gists}</div>   
+                </div>
+
             </Fragment>
         )
     }
