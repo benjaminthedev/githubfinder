@@ -80,7 +80,9 @@ export class User extends Component {
                         
                        
                      </ul>
-                </div>
+                </div> 
+
+                
 
                 <div className="card text-center">
                       <div classNam="badge badge-light">Followers: {followers}</div>       
